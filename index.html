@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spartan Algo-Mobile | UACA</title>
+    <title>Spartan Polyglot Pro | UACA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'Fira Code', monospace; }
-        /* Animación para el menú lateral en móvil */
         #mobile-menu { transition: transform 0.3s ease-in-out; }
         .menu-open { transform: translateX(0) !important; }
+        .tab-active { border-bottom: 2px solid #0ea5e9; color: #0ea5e9; background: rgba(14, 165, 233, 0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
     </style>
 </head>
 <body class="bg-[#0f172a] text-slate-200 min-h-screen flex flex-col">
@@ -22,51 +25,51 @@
                 <button onclick="toggleMenu()" class="lg:hidden p-2 bg-slate-800 rounded-lg text-sky-400">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
-                <h1 class="text-lg md:text-xl font-bold text-sky-400 tracking-tight">⚔️ SPARTAN APP</h1>
+                <h1 class="text-lg font-bold text-sky-400 tracking-tighter">⚔️ SPARTAN <span class="text-slate-100">DEV</span></h1>
             </div>
-            <span class="text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 rounded-full uppercase">v2.0 Mobile</span>
+            <div class="flex items-center gap-2 bg-slate-900 px-3 py-1 rounded-full border border-slate-700">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">UACA Sede Caribe</span>
+            </div>
         </div>
     </header>
 
-    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
-
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/70 z-40 hidden lg:hidden"></div>
+    
     <div class="container mx-auto flex flex-grow relative">
-        
         <aside id="mobile-menu" class="fixed inset-y-0 left-0 w-72 bg-[#1e293b] z-50 -translate-x-full lg:translate-x-0 lg:static lg:w-80 border-r border-slate-700 flex flex-col shadow-2xl transition-transform">
-            <div class="p-4 border-b border-slate-700 bg-slate-800/50 flex justify-between items-center">
-                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Ejercicios UACA</h2>
-                <button onclick="toggleMenu()" class="lg:hidden text-slate-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
+            <div class="p-4 border-b border-slate-700 bg-slate-900/50">
+                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest text-center">Guía de Ejercicios</h2>
             </div>
-            <div id="menu-ejercicios" class="overflow-y-auto p-3 space-y-2 flex-grow max-h-[calc(100vh-120px)]">
-                </div>
+            <div id="menu-ejercicios" class="overflow-y-auto p-3 space-y-1 flex-grow custom-scrollbar"></div>
         </aside>
 
-        <main class="flex-grow p-4 md:p-8 w-full">
-            <div id="welcome-card" class="bg-sky-900/20 border border-sky-500/30 p-6 rounded-2xl text-center">
-                <div class="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18 18.247 18.477 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        <main class="flex-grow p-4 md:p-8 w-full max-w-5xl mx-auto">
+            <div id="welcome-card" class="bg-slate-800/40 border border-slate-700 p-10 rounded-3xl text-center mt-10">
+                <div class="w-20 h-20 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                 </div>
-                <h3 class="text-sky-400 font-bold text-xl mb-2">Modo Estudio Activo</h3>
-                <p class="text-slate-400 text-sm">Toca el menú para revisar los algoritmos de la práctica.</p>
+                <h3 class="text-white font-bold text-2xl mb-2">¡Listo para el Combate!</h3>
+                <p class="text-slate-400 text-sm max-w-xs mx-auto">Selecciona un ejercicio de la práctica para ver su resolución en Pseudocódigo y Python.</p>
             </div>
 
-            <div id="editor-container" class="hidden space-y-4 animate-in slide-in-from-bottom-4 duration-300">
-                <div class="bg-[#020617] rounded-xl border border-slate-700 overflow-hidden shadow-2xl">
-                    <div class="bg-[#1e293b] px-4 py-3 flex justify-between items-center border-b border-slate-700">
-                        <span id="file-name" class="font-mono text-xs text-emerald-400 tracking-tight"></span>
-                        <button onclick="copyCode()" class="bg-slate-700 p-2 rounded-md hover:bg-sky-600 transition-colors">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-                        </button>
+            <div id="editor-container" class="hidden space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-500">
+                <div class="bg-sky-500/10 border-l-4 border-sky-500 p-5 rounded-r-2xl">
+                    <h4 id="enunciado-titulo" class="text-sky-400 font-bold text-base mb-1"></h4>
+                    <p id="enunciado-text" class="text-slate-300 text-sm leading-relaxed italic"></p>
+                </div>
+
+                <div class="bg-[#020617] rounded-3xl border border-slate-700 overflow-hidden shadow-2xl">
+                    <div class="bg-[#1e293b] flex border-b border-slate-700">
+                        <button onclick="switchLang('pseint')" id="tab-pseint" class="flex-1 py-4 text-xs font-bold uppercase tracking-wider tab-active transition-all">PSeInt</button>
+                        <button onclick="switchLang('python')" id="tab-python" class="flex-1 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 transition-all">Python 3</button>
                     </div>
                     
-                    <div class="p-4 bg-slate-800/20 border-b border-slate-700/50">
-                        <p id="enunciado-text" class="text-slate-300 text-sm italic font-medium"></p>
-                    </div>
-
-                    <div class="overflow-x-auto bg-[#020617]">
-                        <pre class="p-5"><code id="codigo-pseint" class="font-mono text-xs md:text-sm leading-relaxed text-sky-300"></code></pre>
+                    <div class="relative group">
+                        <pre class="p-6 md:p-10 overflow-x-auto custom-scrollbar"><code id="codigo-display" class="font-mono text-sm md:text-base leading-relaxed"></code></pre>
+                        <button onclick="copyCurrentCode()" class="absolute top-4 right-4 bg-slate-800/80 hover:bg-sky-600 text-white p-2.5 rounded-xl opacity-0 group-hover:opacity-100 transition-all border border-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -74,62 +77,112 @@
     </div>
 
     <script>
-  const ejercicios = [
-    { id: 1, titulo: "Área Triángulo", enunciado: "Calcular el área usando la fórmula: Area=(B*A)/2 [cite: 2]", pseint: "Algoritmo AreaTriangulo\n    Escribir \"Ingrese la base:\"\n    Leer B\n    Escribir \"Ingrese la altura:\"\n    Leer A\n    Area <- (B * A) / 2\n    Escribir \"El área es: \", Area\nFinAlgoritmo" },
-    { id: 2, titulo: "Celsius a Fahr", enunciado: "Convertir grados Celsius a Fahrenheit usando: f=c*(9/5)+32 [cite: 3]", pseint: "Algoritmo Grados\n    Escribir \"Celsius:\"\n    Leer c\n    f <- c * (9/5) + 32\n    Escribir \"Fahrenheit: \", f\nFinAlgoritmo" },
-    { id: 3, titulo: "Sumar 3 Números", enunciado: "Sumar tres números [cite: 4]", pseint: "Algoritmo SumarTres\n    Escribir \"N1:\"\n    Leer a\n    Escribir \"N2:\"\n    Leer b\n    Escribir \"N3:\"\n    Leer c\n    Suma <- a + b + c\n    Escribir \"La suma es: \", Suma\nFinAlgoritmo" },
-    { id: 4, titulo: "Promedio Notas", enunciado: "Solicita 3 calificaciones y calcula el promedio [cite: 5]", pseint: "Algoritmo Promedio\n    Escribir \"Nota 1:\"\n    Leer n1\n    Escribir \"Nota 2:\"\n    Leer n2\n    Escribir \"Nota 3:\"\n    Leer n3\n    Prom <- (n1 + n2 + n3) / 3\n    Escribir \"El promedio es: \", Prom\nFinAlgoritmo" },
-    { id: 5, titulo: "Perímetro Rect", enunciado: "Calcular el perímetro: P=2*(Ancho+Largo) [cite: 6]", pseint: "Algoritmo Perimetro\n    Escribir \"Ancho:\"\n    Leer a\n    Escribir \"Largo:\"\n    Leer l\n    P <- 2 * (a + l)\n    Escribir \"El perímetro es: \", P\nFinAlgoritmo" },
-    { id: 6, titulo: "Positivo/Negativo", enunciado: "Determina si un número es positivo, negativo o cero [cite: 7, 8]", pseint: "Algoritmo Signo\n    Escribir \"Número:\"\n    Leer n\n    Si n > 0 Entonces\n        Escribir \"Positivo\"\n    Sino\n        Si n < 0 Entonces\n            Escribir \"Negativo\"\n        Sino\n            Escribir \"Es Cero\"\n        FinSi\n    FinSi\nFinAlgoritmo" },
-    { id: 7, titulo: "Par o Impar", enunciado: "Determinar si un número es par o impar [cite: 9]", pseint: "Algoritmo ParImpar\n    Escribir \"Número:\"\n    Leer n\n    Si n % 2 = 0 Entonces\n        Escribir \"Es Par\"\n    Sino\n        Escribir \"Es Impar\"\n    FinSi\nFinAlgoritmo" },
-    { id: 8, titulo: "Mayor de Dos", enunciado: "Determinar el mayor de dos números [cite: 10]", pseint: "Algoritmo MayorDos\n    Escribir \"N1:\"\n    Leer a\n    Escribir \"N2:\"\n    Leer b\n    Si a > b Entonces\n        Escribir a, \" es mayor\"\n    Sino\n        Escribir b, \" es mayor\"\n    FinSi\nFinAlgoritmo" },
-    { id: 9, titulo: "Estatus Alumno", enunciado: "Verificar si un estudiante aprobó o reprobó [cite: 11]", pseint: "Algoritmo Aprobacion\n    Escribir \"Nota:\"\n    Leer n\n    Si n >= 70 Entonces\n        Escribir \"Aprobado\"\n    Sino\n        Escribir \"Reprobado\"\n    FinSi\nFinAlgoritmo" },
-    { id: 10, titulo: "Año Bisiesto", enunciado: "Determinar si un año es bisiesto [cite: 12, 13]", pseint: "Algoritmo Bisiesto\n    Escribir \"Año:\"\n    Leer a\n    Si (a % 4 = 0 Y a % 100 <> 0) O (a % 400 = 0) Entonces\n        Escribir \"Es Bisiesto\"\n    Sino\n        Escribir \"No es Bisiesto\"\n    FinSi\nFinAlgoritmo" },
-    { id: 11, titulo: "Descuento Prod", enunciado: "Si precio > 5,000 es 10% de lo contrario 2% ", pseint: "Algoritmo Descuento\n    Escribir \"Precio:\"\n    Leer p\n    Si p > 5000 Entonces\n        desc <- p * 0.10\n    Sino\n        desc <- p * 0.02\n    FinSi\n    Escribir \"Pago final: \", p - desc\nFinAlgoritmo" },
-    { id: 12, titulo: "Múltiplo de 5", enunciado: "Determinar si un número es múltiplo de 5 [cite: 15]", pseint: "Algoritmo Multiplo5\n    Escribir \"Número:\"\n    Leer n\n    Si n % 5 = 0 Entonces\n        Escribir \"Es múltiplo de 5\"\n    Sino\n        Escribir \"No es múltiplo\"\n    FinSi\nFinAlgoritmo" },
-    { id: 13, titulo: "Mayoría Edad", enunciado: "Decidir si una persona es mayor de edad o menor [cite: 16]", pseint: "Algoritmo MayorEdad\n    Escribir \"Edad:\"\n    Leer e\n    Si e >= 18 Entonces\n        Escribir \"Mayor de edad\"\n    Sino\n        Escribir \"Menor de edad\"\n    FinSi\nFinAlgoritmo" },
-    { id: 14, titulo: "Validar Sí/No", enunciado: "Verificar si un usuario ingresó \"sí\" o \"no\" [cite: 17]", pseint: "Algoritmo ValidarSiNo\n    Escribir \"Ingrese si/no:\"\n    Leer r\n    Si r = \"si\" O r = \"no\" Entonces\n        Escribir \"Válido\"\n    Sino\n        Escribir \"Inválido\"\n    FinSi\nFinAlgoritmo" },
-    { id: 15, titulo: "Tienda Descs", enunciado: "> 25k (20%), 15k-25k (10%), < 15k (0%) [cite: 18]", pseint: "Algoritmo DescuentoTienda\n    Escribir \"Monto:\"\n    Leer m\n    Si m > 25000 Entonces\n        d <- m * 0.20\n    Sino\n        Si m >= 15000 Entonces\n            d <- m * 0.10\n        Sino\n            d <- 0\n        FinSi\n    FinSi\n    Escribir \"Total: \", m - d\nFinAlgoritmo" },
-    { id: 16, titulo: "Tipo de Día", enunciado: "Determinar si un día es entre semana o fin de semana [cite: 19]", pseint: "Algoritmo TipoDia\n    Escribir \"Día:\"\n    Leer d\n    Si d = \"sabado\" O d = \"domingo\" Entonces\n        Escribir \"Fin de semana\"\n    Sino\n        Escribir \"Entre semana\"\n    FinSi\nFinAlgoritmo" },
-    { id: 17, titulo: "Clasificar Temp", enunciado: "Clasificar temperatura en fría, templada o caliente ", pseint: "Algoritmo ClasificarTemp\n    Escribir \"Temp:\"\n    Leer t\n    Si t < 15 Entonces\n        Escribir \"Fría\"\n    Sino\n        Si t < 25 Entonces\n            Escribir \"Templada\"\n        Sino\n            Escribir \"Caliente\"\n        FinSi\n    FinSi\nFinAlgoritmo" },
-    { id: 18, titulo: "Vocal/Consonante", enunciado: "Verificar si una letra ingresada es vocal o consonante [cite: 21]", pseint: "Algoritmo LetraTipo\n    Escribir \"Letra:\"\n    Leer l\n    Si l='a' O l='e' O l='i' O l='o' O l='u' Entonces\n        Escribir \"Es Vocal\"\n    Sino\n        Escribir \"Es Consonante\"\n    FinSi\nFinAlgoritmo" },
-    { id: 19, titulo: "Bono Antigüedad", enunciado: "Determinar si un trabajador recibe bono según antigüedad [cite: 22]", pseint: "Algoritmo BonoAntiguedad\n    Escribir \"Años laborados:\"\n    Leer a\n    Si a > 2 Entonces\n        Escribir \"Recibe bono\"\n    Sino\n        Escribir \"No recibe bono\"\n    FinSi\nFinAlgoritmo" }
-];
+        let currentEj = null;
+        let currentLang = 'pseint';
+
+        const ejercicios = [
+            { id: 1, titulo: "Área del Triángulo", enunciado: "Calcular el área usando la fórmula: Área = (Base * Altura) / 2", 
+              pseint: "Algoritmo AreaTriangulo\n    Escribir \"Base:\"\n    Leer B\n    Escribir \"Altura:\"\n    Leer A\n    Area <- (B * A) / 2\n    Escribir \"El área es: \", Area\nFinAlgoritmo",
+              python: "base = float(input('Ingrese Base: '))\naltura = float(input('Ingrese Altura: '))\narea = (base * altura) / 2\nprint(f'El área es: {area}')" },
+            { id: 2, titulo: "Celsius a Fahrenheit", enunciado: "Convertir grados Celsius a Fahrenheit usando: F = C * (9/5) + 32", 
+              pseint: "Algoritmo ConvertirTemp\n    Escribir \"Celsius:\"\n    Leer C\n    F <- C * (9/5) + 32\n    Escribir \"Grados F: \", F\nFinAlgoritmo",
+              python: "c = float(input('Grados Celsius: '))\nf = c * (9/5) + 32\nprint(f'{c}°C equivalen a {f}°F')" },
+            { id: 3, titulo: "Sumar 3 Números", enunciado: "Solicitar tres números y mostrar su suma total", 
+              pseint: "Algoritmo SumaTres\n    Leer a, b, c\n    Res <- a + b + c\n    Escribir \"Suma: \", Res\nFinAlgoritmo",
+              python: "n1 = float(input('Num 1: '))\nn2 = float(input('Num 2: '))\nn3 = float(input('Num 3: '))\nprint(f'Suma total: {n1 + n2 + n3}')" },
+            { id: 4, titulo: "Promedio de Notas", enunciado: "Calcular el promedio de 3 calificaciones", 
+              pseint: "Algoritmo PromedioNotas\n    Leer n1, n2, n3\n    P <- (n1 + n2 + n3) / 3\n    Escribir \"Promedio: \", P\nFinAlgoritmo",
+              python: "notas = [float(input(f'Nota {i+1}: ')) for i in range(3)]\nprint(f'Promedio: {sum(notas)/3:.2f}')" },
+            { id: 5, titulo: "Perímetro Rectángulo", enunciado: "P = 2 * (Ancho + Largo)", 
+              pseint: "Algoritmo PerimetroRect\n    Leer Ancho, Largo\n    P <- 2 * (Ancho + Largo)\n    Escribir \"Perímetro: \", P\nFinAlgoritmo",
+              python: "a = float(input('Ancho: '))\nl = float(input('Largo: '))\nprint(f'Perímetro: {2*(a+l)}')" },
+            { id: 6, titulo: "Positivo o Negativo", enunciado: "Determinar si un número es positivo, negativo o cero", 
+              pseint: "Algoritmo Signo\n    Leer n\n    Si n > 0 Entonces Escribir \"+\" Sino Si n < 0 Entonces Escribir \"-\" Sino Escribir \"0\" FinSi FinSi\nFinAlgoritmo",
+              python: "n = float(input('Número: '))\nif n > 0: print('Positivo')\nelif n < 0: print('Negativo')\nelse: print('Cero')" },
+            { id: 7, titulo: "Par o Impar", enunciado: "Determinar si un número es par o impar", 
+              pseint: "Algoritmo Paridad\n    Leer n\n    Si n % 2 = 0 Entonces Escribir \"Par\" Sino Escribir \"Impar\" FinSi\nFinAlgoritmo",
+              python: "n = int(input('Número: '))\nprint('Par' if n % 2 == 0 else 'Impar')" },
+            { id: 8, titulo: "Mayor de Dos", enunciado: "Determinar el mayor de dos números ingresados", 
+              pseint: "Algoritmo Mayor\n    Leer a, b\n    Si a > b Entonces Escribir a Sino Escribir b FinSi\nFinAlgoritmo",
+              python: "a, b = float(input('A: ')), float(input('B: '))\nprint(f'El mayor es: {max(a, b)}')" },
+            { id: 9, titulo: "Aprobado/Reprobado", enunciado: "Aprobado si nota >= 70", 
+              pseint: "Algoritmo Nota\n    Leer n\n    Si n >= 70 Entonces Escribir \"Aprobado\" Sino Escribir \"Reprobado\" FinSi\nFinAlgoritmo",
+              python: "nota = float(input('Nota: '))\nprint('APROBADO' if nota >= 70 else 'REPROBADO')" },
+            { id: 10, titulo: "Año Bisiesto", enunciado: "Determinar si un año es bisiesto", 
+              pseint: "Algoritmo Bisiesto\n    Leer a\n    Si (a%4=0 Y a%100<>0) O (a%400=0) Entonces Escribir \"Si\" Sino Escribir \"No\" FinSi\nFinAlgoritmo",
+              python: "a = int(input('Año: '))\nes_b = (a % 4 == 0 and a % 100 != 0) or (a % 400 == 0)\nprint('Bisiesto' if es_b else 'No bisiesto')" },
+            { id: 11, titulo: "Descuento Producto", enunciado: "> 5000 (10%), si no (2%)", 
+              pseint: "Algoritmo Desc\n    Leer p\n    Si p > 5000 Entonces d <- 0.10 Sino d <- 0.02 FinSi\n    Escribir p - (p*d)\nFinAlgoritmo",
+              python: "p = float(input('Precio: '))\nd = 0.10 if p > 5000 else 0.02\nprint(f'Total: {p * (1-d)}')" },
+            { id: 12, titulo: "Múltiplo de 5", enunciado: "Determinar si un número es múltiplo de 5", 
+              pseint: "Algoritmo Mult5\n    Leer n\n    Si n % 5 = 0 Entonces Escribir \"Si\" Sino Escribir \"No\" FinSi\nFinAlgoritmo",
+              python: "n = int(input('Número: '))\nprint('Es múltiplo de 5' if n % 5 == 0 else 'No lo es')" },
+            { id: 13, titulo: "Mayoría de Edad", enunciado: "Saber si es mayor de edad (>=18)", 
+              pseint: "Algoritmo Edad\n    Leer e\n    Si e >= 18 Entonces Escribir \"Mayor\" Sino Escribir \"Menor\" FinSi\nFinAlgoritmo",
+              python: "e = int(input('Edad: '))\nprint('Mayor de edad' if e >= 18 else 'Menor de edad')" },
+            { id: 14, titulo: "Validar Sí/No", enunciado: "Verificar si ingresó 'si' o 'no'", 
+              pseint: "Algoritmo Validar\n    Leer r\n    Si r=\"si\" O r=\"no\" Entonces Escribir \"Ok\" Sino Escribir \"Error\" FinSi\nFinAlgoritmo",
+              python: "r = input('¿Si o No?: ').lower()\nprint('Válido' if r in ['si', 'no'] else 'Inválido')" },
+            { id: 15, titulo: "Tienda Descs", enunciado: "> 25k (20%), 15k-25k (10%), < 15k (0%)", 
+              pseint: "Algoritmo Tienda\n    Leer m\n    Si m > 25000 Entonces d<-0.20 Sino Si m >= 15000 Entonces d<-0.10 Sino d<-0 FinSi FinSi\n    Escribir m - (m*d)\nFinAlgoritmo",
+              python: "m = float(input('Monto: '))\nif m > 25000: d = 0.20\nelif m >= 15000: d = 0.10\nelse: d = 0\nprint(f'Total: {m * (1-d)}')" },
+            { id: 16, titulo: "Tipo de Día", enunciado: "Saber si es entre semana o fin de semana", 
+              pseint: "Algoritmo Dia\n    Leer d\n    Si d=\"sabado\" O d=\"domingo\" Entonces Escribir \"Finde\" Sino Escribir \"Semana\" FinSi\nFinAlgoritmo",
+              python: "d = input('Día: ').lower()\nprint('Finde' if d in ['sabado', 'domingo'] else 'Entre semana')" },
+            { id: 17, titulo: "Clasificar Temp", enunciado: "Fría (<15), Templada (15-24), Caliente (>=25)", 
+              pseint: "Algoritmo Clima\n    Leer t\n    Si t < 15 Entonces \"Fría\" Sino Si t < 25 Entonces \"Templada\" Sino \"Caliente\" FinSi FinSi\nFinAlgoritmo",
+              python: "t = float(input('Temp: '))\nif t < 15: print('Fría')\nelif t < 25: print('Templada')\nelse: print('Caliente')" },
+            { id: 18, titulo: "Vocal o Consonante", enunciado: "Verificar si una letra es vocal", 
+              pseint: "Algoritmo Letra\n    Leer l\n    Si l='a' O l='e' O l='i' O l='o' O l='u' Entonces \"Vocal\" Sino \"Consonante\" FinSi\nFinAlgoritmo",
+              python: "l = input('Letra: ').lower()\nprint('Vocal' if l in 'aeiou' else 'Consonante')" },
+            { id: 19, titulo: "Bono Antigüedad", enunciado: "Determinar bono según antigüedad laboral (> 2 años)", 
+              pseint: "Algoritmo Bono\n    Leer a\n    Si a > 2 Entonces Escribir \"Bono\" Sino Escribir \"Sin bono\" FinSi\nFinAlgoritmo",
+              python: "a = int(input('Años: '))\nprint('Aplica para bono' if a > 2 else 'No aplica')" }
+        ];
 
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('menu-open');
             document.getElementById('overlay').classList.toggle('hidden');
         }
 
-        function renderMenu() {
-            const container = document.getElementById('menu-ejercicios');
-            ejercicios.forEach(ej => {
-                const btn = document.createElement('button');
-                btn.className = "w-full flex items-center gap-3 p-3 rounded-xl bg-slate-800 border border-slate-700 text-left active:bg-sky-900 transition-colors";
-                btn.innerHTML = `
-                    <span class="w-6 h-6 rounded bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px] font-bold">${ej.id}</span>
-                    <span class="text-xs font-semibold text-slate-300">${ej.titulo}</span>
-                `;
-                btn.onclick = () => {
-                    selectEjercicio(ej);
-                    if(window.innerWidth < 1024) toggleMenu();
-                };
-                container.appendChild(btn);
-            });
+        function switchLang(lang) {
+            currentLang = lang;
+            document.getElementById('tab-pseint').className = `flex-1 py-4 text-xs font-bold uppercase tracking-wider transition-all ${lang === 'pseint' ? 'tab-active' : 'text-slate-500'}`;
+            document.getElementById('tab-python').className = `flex-1 py-4 text-xs font-bold uppercase tracking-wider transition-all ${lang === 'python' ? 'tab-active' : 'text-slate-500'}`;
+            updateDisplay();
         }
 
         function selectEjercicio(ej) {
+            currentEj = ej;
             document.getElementById('welcome-card').classList.add('hidden');
             document.getElementById('editor-container').classList.remove('hidden');
-            document.getElementById('file-name').innerText = `ejercicio_${ej.id}.psc`;
+            document.getElementById('enunciado-titulo').innerText = `Ejercicio #${ej.id}: ${ej.titulo}`;
             document.getElementById('enunciado-text').innerText = ej.enunciado;
-            document.getElementById('codigo-pseint').textContent = ej.pseint;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            updateDisplay();
+            if(window.innerWidth < 1024) toggleMenu();
         }
 
-        function copyCode() {
-            navigator.clipboard.writeText(document.getElementById('codigo-pseint').textContent);
-            alert("¡Copiado, socio!");
+        function updateDisplay() {
+            const codeEl = document.getElementById('codigo-display');
+            codeEl.textContent = currentEj[currentLang];
+            codeEl.className = `font-mono text-sm md:text-base leading-relaxed ${currentLang === 'python' ? 'text-yellow-400' : 'text-emerald-400'}`;
+        }
+
+        function renderMenu() {
+            const menu = document.getElementById('menu-ejercicios');
+            ejercicios.forEach(ej => {
+                const btn = document.createElement('button');
+                btn.className = "w-full flex items-center gap-3 p-3.5 rounded-2xl hover:bg-slate-800 transition-all group border border-transparent hover:border-slate-700";
+                btn.innerHTML = `<span class="w-7 h-7 flex-shrink-0 rounded-lg bg-slate-700 text-[11px] font-bold flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white">${ej.id}</span>
+                                 <span class="text-xs font-medium text-slate-400 group-hover:text-white truncate text-left">${ej.titulo}</span>`;
+                btn.onclick = () => selectEjercicio(ej);
+                menu.appendChild(btn);
+            });
+        }
+
+        function copyCurrentCode() {
+            navigator.clipboard.writeText(currentEj[currentLang]);
+            alert(`Código ${currentLang.toUpperCase()} copiado, socio.`);
         }
 
         renderMenu();
